@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         var file   = config[field],
             buffer = fs.readFileSync(file),
             detect = enc.detect(buffer),
-            data   = fs.readFileSync(file);
+            data   = buffer.toString(detect.encoding);
 
         pkg[field] = data;
         
